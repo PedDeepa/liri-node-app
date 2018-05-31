@@ -36,7 +36,7 @@ var random = function () {
     fs.readFile("random.txt", "utf8", function (error, data) {
         console.log(data);
       
-       fs.appendFile('log.txt', data +'\n', (err) => {
+       fs.appendFile('log.txt', JSON.stringify(data) + '\n-----------------\n', (err) => {
         if (err) throw err;
         console.log('The "data to append" was appended to file!');
       });
@@ -67,7 +67,7 @@ var omdbMovie = function (movieName) {
             });
             console.log(data);
            
-            fs.appendFile('log.txt', data +'\n', (err) => {
+            fs.appendFile('log.txt', JSON.stringify(data) +'\n-----------------\n', (err) => {
                 if (err) throw err;
                 console.log('The "data to append" was appended to file!');
               });
@@ -95,7 +95,7 @@ var myTweets = function () {
             }
             console.log(data);
                 
-          fs.appendFile('log.txt', data +'\n', (err) => {
+          fs.appendFile('log.txt', JSON.stringify(data) +'\n-----------------\n', (err) => {
             if (err) throw err;
             console.log('The "data to append" was appended to file!');
           });
@@ -131,7 +131,7 @@ var songsFromSpotify = function (songName) {
             });
         }
         console.log(songsData);
-        fs.appendFile('log.txt', songsData +'\n', (err) => {
+        fs.appendFile('log.txt', JSON.stringify(songsData) +'\n-----------------\n', (err) => {
             if (err) throw err;
             console.log('The "data to append" was appended to file!');
           });
